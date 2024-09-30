@@ -1,33 +1,36 @@
 // Calculator.cpp
-#include "Calculator.h"   // Calculator Å¬·¡½ºÀÇ ¼±¾ðºÎ°¡ Æ÷ÇÔµÈ Çì´õ ÆÄÀÏÀ» Æ÷ÇÔ
+#include <iostream>
+using namespace std;
 
-// Calculator Å¬·¡½ºÀÇ setValue ¸Þ¼­µå¸¦ ±¸Çö
+#include "Calculator.h"   // Calculator í´ëž˜ìŠ¤ì˜ ì„ ì–¸ë¶€ê°€ í¬í•¨ëœ í—¤ë” íŒŒì¼ì„ í¬í•¨
+
+// Calculator í´ëž˜ìŠ¤ì˜ setValue ë©”ì„œë“œë¥¼ êµ¬í˜„
 void Calculator::setValue(int x, int y) {
-    a = x;   // ÀÔ·ÂµÈ Ã¹ ¹øÂ° Á¤¼ö x¸¦ ¸â¹ö º¯¼ö a¿¡ ÀúÀå
-    b = y;   // ÀÔ·ÂµÈ µÎ ¹øÂ° Á¤¼ö y¸¦ ¸â¹ö º¯¼ö b¿¡ ÀúÀå
+    a = x;   // ìž…ë ¥ëœ ì²« ë²ˆì§¸ ì •ìˆ˜ xë¥¼ ë©¤ë²„ ë³€ìˆ˜ aì— ì €ìž¥
+    b = y;   // ìž…ë ¥ëœ ë‘ ë²ˆì§¸ ì •ìˆ˜ yë¥¼ ë©¤ë²„ ë³€ìˆ˜ bì— ì €ìž¥
 }
 
-// Add Å¬·¡½ºÀÇ calculate ¸Þ¼­µå¸¦ ±¸Çö
+// Add í´ëž˜ìŠ¤ì˜ calculate ë©”ì„œë“œë¥¼ êµ¬í˜„
 int Add::calculate() {
-    return a + b;   // ¸â¹ö º¯¼ö a¿Í bÀÇ ÇÕÀ» ¹ÝÈ¯
+    return a + b;   // ë©¤ë²„ ë³€ìˆ˜ aì™€ bì˜ í•©ì„ ë°˜í™˜
 }
 
-// Sub Å¬·¡½ºÀÇ calculate ¸Þ¼­µå¸¦ ±¸Çö
+// Sub í´ëž˜ìŠ¤ì˜ calculate ë©”ì„œë“œë¥¼ êµ¬í˜„
 int Sub::calculate() {
-    return a - b;   // ¸â¹ö º¯¼ö a¿¡¼­ b¸¦ »« °á°ú¸¦ ¹ÝÈ¯
+    return a - b;   // ë©¤ë²„ ë³€ìˆ˜ aì—ì„œ bë¥¼ ëº€ ê²°ê³¼ë¥¼ ë°˜í™˜
 }
 
-// Mul Å¬·¡½ºÀÇ calculate ¸Þ¼­µå¸¦ ±¸Çö
+// Mul í´ëž˜ìŠ¤ì˜ calculate ë©”ì„œë“œë¥¼ êµ¬í˜„
 int Mul::calculate() {
-    return a * b;   // ¸â¹ö º¯¼ö a¿Í bÀÇ °öÀ» ¹ÝÈ¯
+    return a * b;   // ë©¤ë²„ ë³€ìˆ˜ aì™€ bì˜ ê³±ì„ ë°˜í™˜
 }
 
-// Div Å¬·¡½ºÀÇ calculate ¸Þ¼­µå¸¦ ±¸Çö
+// Div í´ëž˜ìŠ¤ì˜ calculate ë©”ì„œë“œë¥¼ êµ¬í˜„
 int Div::calculate() {
     if (b != 0)
-        return a / b;   // b°¡ 0ÀÌ ¾Æ´Ò °æ¿ì a¸¦ b·Î ³ª´« °á°ú¸¦ ¹ÝÈ¯
-    else {   // b°¡ 0ÀÏ °æ¿ì
-        cout << "0À¸·Î ³ª´­ ¼ö ¾ø½À´Ï´Ù." << endl;   // ¿¡·¯ ¸Þ½ÃÁö Ãâ·Â
-        return 0;   // 0À» ¹ÝÈ¯ÇÏ¿© °è»ê °á°ú°¡ ¾øÀ½À» Ç¥½Ã
+        return a / b;   // bê°€ 0ì´ ì•„ë‹ ê²½ìš° aë¥¼ bë¡œ ë‚˜ëˆˆ ê²°ê³¼ë¥¼ ë°˜í™˜
+    else {   // bê°€ 0ì¼ ê²½ìš°
+        cout << "0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ìŠµë‹ˆë‹¤." << endl;   // ì—ëŸ¬ ë©”ì‹œì§€ ì¶œë ¥
+        return 0;   // 0ì„ ë°˜í™˜í•˜ì—¬ ê³„ì‚° ê²°ê³¼ê°€ ì—†ìŒì„ í‘œì‹œ
     }
 }
