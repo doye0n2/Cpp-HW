@@ -1,6 +1,7 @@
 // Calculator.cpp
-#include <iostream>
-using namespace std;
+
+#include <iostream>  // 표준 입출력 스트림을 사용하기 위한 헤더 파일 포함
+using namespace std;  // std 네임스페이스를 전역에서 사용할 수 있도록 설정
 
 #include "Calculator.h"   // Calculator 클래스의 선언부가 포함된 헤더 파일을 포함
 
