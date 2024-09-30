@@ -1,48 +1,46 @@
-#pragma once // Çì´õ ÆÄÀÏÀÌ ÇÑ ¹ø¸¸ Æ÷ÇÔµÇµµ·Ï ¼³Á¤
-
-#ifndef CALCULATOR_H // Çì´õ ÆÄÀÏ Áßº¹ Æ÷ÇÔ ¹æÁö
+#ifndef CALCULATOR_H // í—¤ë” íŒŒì¼ ì¤‘ë³µ í¬í•¨ ë°©ì§€
 #define CALCULATOR_H 
 
-// Calculator Å¬·¡½º: »çÄ¢¿¬»êÀ» À§ÇÑ ±âº» Å¬·¡½º
+// Calculator í´ëž˜ìŠ¤: ì‚¬ì¹™ì—°ì‚°ì„ ìœ„í•œ ê¸°ë³¸ í´ëž˜ìŠ¤
 class Calculator {
 protected:
-    int a, b; // µÎ °³ÀÇ ÇÇ¿¬»êÀÚ¸¦ ÀúÀåÇÏ´Â ¸â¹ö º¯¼ö
+    int a, b; // ë‘ ê°œì˜ í”¼ì—°ì‚°ìžë¥¼ ì €ìž¥í•˜ëŠ” ë©¤ë²„ ë³€ìˆ˜
 
 public:
-    // setValue ÇÔ¼ö: µÎ °³ÀÇ Á¤¼ö °ªÀ» a¿Í b¿¡ ¼³Á¤ÇÏ´Â ÇÔ¼ö
+    // setValue í•¨ìˆ˜: ë‘ ê°œì˜ ì •ìˆ˜ ê°’ì„ aì™€ bì— ì„¤ì •í•˜ëŠ” í•¨ìˆ˜
     void setValue(int x, int y);
 
-    // calculate ÇÔ¼ö: °¢ ¿¬»ê Å¬·¡½º¿¡¼­ ±¸ÇöÇØ¾ß ÇÏ´Â ¼ø¼ö °¡»ó ÇÔ¼ö
-    // ¹ÝÈ¯ÇüÀº intÀÌ¸ç, ¿¬»êÀÇ °á°ú¸¦ ¹ÝÈ¯
-    virtual int calculate() = 0; // ¼ø¼ö °¡»ó ÇÔ¼ö (Ãß»ó ÇÔ¼ö)
+    // calculate í•¨ìˆ˜: ê° ì—°ì‚° í´ëž˜ìŠ¤ì—ì„œ êµ¬í˜„í•´ì•¼ í•˜ëŠ” ìˆœìˆ˜ ê°€ìƒ í•¨ìˆ˜
+    // ë°˜í™˜í˜•ì€ intì´ë©°, ì—°ì‚°ì˜ ê²°ê³¼ë¥¼ ë°˜í™˜
+    virtual int calculate() = 0; // ìˆœìˆ˜ ê°€ìƒ í•¨ìˆ˜ (ì¶”ìƒ í•¨ìˆ˜)
 };
 
-// Add Å¬·¡½º: µ¡¼ÀÀ» ¼öÇàÇÏ´Â Å¬·¡½º
+// Add í´ëž˜ìŠ¤: ë§ì…ˆì„ ìˆ˜í–‰í•˜ëŠ” í´ëž˜ìŠ¤
 class Add : public Calculator {
 public:
-    // calculate ÇÔ¼ö: µÎ ¼ö¸¦ ´õÇÑ °á°ú¸¦ ¹ÝÈ¯
-    int calculate(); // ´õÇÏ±â
+    // calculate í•¨ìˆ˜: ë‘ ìˆ˜ë¥¼ ë”í•œ ê²°ê³¼ë¥¼ ë°˜í™˜
+    int calculate(); // ë”í•˜ê¸°
 };
 
-// Sub Å¬·¡½º: »¬¼ÀÀ» ¼öÇàÇÏ´Â Å¬·¡½º
+// Sub í´ëž˜ìŠ¤: ëº„ì…ˆì„ ìˆ˜í–‰í•˜ëŠ” í´ëž˜ìŠ¤
 class Sub : public Calculator {
 public:
-    // calculate ÇÔ¼ö: µÎ ¼ö¸¦ »« °á°ú¸¦ ¹ÝÈ¯
-    int calculate(); // »©±â
+    // calculate í•¨ìˆ˜: ë‘ ìˆ˜ë¥¼ ëº€ ê²°ê³¼ë¥¼ ë°˜í™˜
+    int calculate(); // ë¹¼ê¸°
 };
 
-// Mul Å¬·¡½º: °ö¼ÀÀ» ¼öÇàÇÏ´Â Å¬·¡½º
+// Mul í´ëž˜ìŠ¤: ê³±ì…ˆì„ ìˆ˜í–‰í•˜ëŠ” í´ëž˜ìŠ¤
 class Mul : public Calculator {
 public:
-    // calculate ÇÔ¼ö: µÎ ¼ö¸¦ °öÇÑ °á°ú¸¦ ¹ÝÈ¯
-    int calculate(); // °öÇÏ±â
+    // calculate í•¨ìˆ˜: ë‘ ìˆ˜ë¥¼ ê³±í•œ ê²°ê³¼ë¥¼ ë°˜í™˜
+    int calculate(); // ê³±í•˜ê¸°
 };
 
-// Div Å¬·¡½º: ³ª´°¼ÀÀ» ¼öÇàÇÏ´Â Å¬·¡½º
+// Div í´ëž˜ìŠ¤: ë‚˜ëˆ—ì…ˆì„ ìˆ˜í–‰í•˜ëŠ” í´ëž˜ìŠ¤
 class Div : public Calculator {
 public:
-    // calculate ÇÔ¼ö: µÎ ¼ö¸¦ ³ª´« °á°ú¸¦ ¹ÝÈ¯
-    int calculate(); // ³ª´©±â
+    // calculate í•¨ìˆ˜: ë‘ ìˆ˜ë¥¼ ë‚˜ëˆˆ ê²°ê³¼ë¥¼ ë°˜í™˜
+    int calculate(); // ë‚˜ëˆ„ê¸°
 };
 
-#endif // CALCULATOR_H // Çì´õ ÆÄÀÏ ³¡
+#endif // CALCULATOR_H // í—¤ë” íŒŒì¼ ë
