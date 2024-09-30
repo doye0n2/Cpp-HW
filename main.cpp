@@ -1,41 +1,43 @@
 // main.cpp
+#include <iostream>
+using namespace std;
 
-#include "Calculator.h"   // Calculator Å¬·¡½º¿Í °ü·ÃµÈ ¼±¾ðÀ» Æ÷ÇÔÇÑ Çì´õ ÆÄÀÏÀ» Æ÷ÇÔ
+#include "Calculator.h"   // Calculator í´ëž˜ìŠ¤ì™€ ê´€ë ¨ëœ ì„ ì–¸ì„ í¬í•¨í•œ í—¤ë” íŒŒì¼ì„ í¬í•¨
 
-int main() {   // ÇÁ·Î±×·¥ÀÇ ½ÃÀÛÁ¡ÀÎ main ÇÔ¼ö Á¤ÀÇ
-    Add a;   // µ¡¼ÀÀ» ¼öÇàÇÏ´Â Add Å¬·¡½ºÀÇ °´Ã¼ a »ý¼º
-    Sub s;   // »¬¼ÀÀ» ¼öÇàÇÏ´Â Sub Å¬·¡½ºÀÇ °´Ã¼ s »ý¼º
-    Mul m;   // °ö¼ÀÀ» ¼öÇàÇÏ´Â Mul Å¬·¡½ºÀÇ °´Ã¼ m »ý¼º
-    Div d;   // ³ª´°¼ÀÀ» ¼öÇàÇÏ´Â Div Å¬·¡½ºÀÇ °´Ã¼ d »ý¼º
+int main() {   // í”„ë¡œê·¸ëž¨ì˜ ì‹œìž‘ì ì¸ main í•¨ìˆ˜ ì •ì˜
+    Add a;   // ë§ì…ˆì„ ìˆ˜í–‰í•˜ëŠ” Add í´ëž˜ìŠ¤ì˜ ê°ì²´ a ìƒì„±
+    Sub s;   // ëº„ì…ˆì„ ìˆ˜í–‰í•˜ëŠ” Sub í´ëž˜ìŠ¤ì˜ ê°ì²´ s ìƒì„±
+    Mul m;   // ê³±ì…ˆì„ ìˆ˜í–‰í•˜ëŠ” Mul í´ëž˜ìŠ¤ì˜ ê°ì²´ m ìƒì„±
+    Div d;   // ë‚˜ëˆ—ì…ˆì„ ìˆ˜í–‰í•˜ëŠ” Div í´ëž˜ìŠ¤ì˜ ê°ì²´ d ìƒì„±
 
-    while (true) {   // ¹«ÇÑ ·çÇÁ ½ÃÀÛ
-        int x, y;   // »ç¿ëÀÚ·ÎºÎÅÍ ÀÔ·Â¹ÞÀ» µÎ Á¤¼ö¸¦ À§ÇÑ º¯¼ö x, y ¼±¾ð
-        char op;   // »ç¿ëÀÚ·ÎºÎÅÍ ÀÔ·Â¹ÞÀ» ¿¬»êÀÚ(¹®ÀÚÇü)¸¦ À§ÇÑ º¯¼ö op ¼±¾ð
-        cout << "µÎ Á¤¼ö¿Í ¿¬»êÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä>>";   // »ç¿ëÀÚ¿¡°Ô ÀÔ·ÂÀ» ¿äÃ»ÇÏ´Â ¸Þ½ÃÁö Ãâ·Â
-        cin >> x >> y >> op;   // ÀÔ·ÂµÈ °ªÀ» º¯¼ö x, y, op¿¡ ÀúÀå
+    while (true) {   // ë¬´í•œ ë£¨í”„ ì‹œìž‘
+        int x, y;   // ì‚¬ìš©ìžë¡œë¶€í„° ìž…ë ¥ë°›ì„ ë‘ ì •ìˆ˜ë¥¼ ìœ„í•œ ë³€ìˆ˜ x, y ì„ ì–¸
+        char op;   // ì‚¬ìš©ìžë¡œë¶€í„° ìž…ë ¥ë°›ì„ ì—°ì‚°ìž(ë¬¸ìží˜•)ë¥¼ ìœ„í•œ ë³€ìˆ˜ op ì„ ì–¸
+        cout << "ë‘ ì •ìˆ˜ì™€ ì—°ì‚°ìžë¥¼ ìž…ë ¥í•˜ì„¸ìš”>>";   // ì‚¬ìš©ìžì—ê²Œ ìž…ë ¥ì„ ìš”ì²­í•˜ëŠ” ë©”ì‹œì§€ ì¶œë ¥
+        cin >> x >> y >> op;   // ìž…ë ¥ëœ ê°’ì„ ë³€ìˆ˜ x, y, opì— ì €ìž¥
 
-        switch (op) {                  // ÀÔ·ÂµÈ ¿¬»êÀÚ¿¡ µû¶ó ÀÛ¾÷À» ¼öÇàÇÏ´Â switch¹® ½ÃÀÛ
-        case '+':                     // ¿¬»êÀÚ°¡ '+'ÀÎ °æ¿ì
-            a.setValue(x, y);            // Add °´Ã¼ a¿¡ x, y °ªÀ» ¼³Á¤
-            cout << a.calculate() << endl;   // °è»ê °á°ú¸¦ Ãâ·Â
-            break;                     // switch¹® Á¾·á
-        case '-':                     // ¿¬»êÀÚ°¡ '-'ÀÎ °æ¿ì
-            s.setValue(x, y);            // Sub °´Ã¼ s¿¡ x, y °ªÀ» ¼³Á¤
-            cout << s.calculate() << endl;   // °è»ê °á°ú¸¦ Ãâ·Â
+        switch (op) {                  // ìž…ë ¥ëœ ì—°ì‚°ìžì— ë”°ë¼ ìž‘ì—…ì„ ìˆ˜í–‰í•˜ëŠ” switchë¬¸ ì‹œìž‘
+        case '+':                     // ì—°ì‚°ìžê°€ '+'ì¸ ê²½ìš°
+            a.setValue(x, y);            // Add ê°ì²´ aì— x, y ê°’ì„ ì„¤ì •
+            cout << a.calculate() << endl;   // ê³„ì‚° ê²°ê³¼ë¥¼ ì¶œë ¥
+            break;                     // switchë¬¸ ì¢…ë£Œ
+        case '-':                     // ì—°ì‚°ìžê°€ '-'ì¸ ê²½ìš°
+            s.setValue(x, y);            // Sub ê°ì²´ sì— x, y ê°’ì„ ì„¤ì •
+            cout << s.calculate() << endl;   // ê³„ì‚° ê²°ê³¼ë¥¼ ì¶œë ¥
             break;
-        case '*':                     // ¿¬»êÀÚ°¡ '*'ÀÎ °æ¿ì
-            m.setValue(x, y);            // Mul °´Ã¼ m¿¡ x, y °ªÀ» ¼³Á¤
-            cout << m.calculate() << endl;   // °è»ê °á°ú¸¦ Ãâ·Â
+        case '*':                     // ì—°ì‚°ìžê°€ '*'ì¸ ê²½ìš°
+            m.setValue(x, y);            // Mul ê°ì²´ mì— x, y ê°’ì„ ì„¤ì •
+            cout << m.calculate() << endl;   // ê³„ì‚° ê²°ê³¼ë¥¼ ì¶œë ¥
             break;
-        case '/':                     // ¿¬»êÀÚ°¡ '/'ÀÎ °æ¿ì
-            d.setValue(x, y);            // Div °´Ã¼ d¿¡ x, y °ªÀ» ¼³Á¤
-            cout << d.calculate() << endl;   // °è»ê °á°ú¸¦ Ãâ·Â
+        case '/':                     // ì—°ì‚°ìžê°€ '/'ì¸ ê²½ìš°
+            d.setValue(x, y);            // Div ê°ì²´ dì— x, y ê°’ì„ ì„¤ì •
+            cout << d.calculate() << endl;   // ê³„ì‚° ê²°ê³¼ë¥¼ ì¶œë ¥
             break;
-        default:                     // À§ÀÇ case¿Í ÀÏÄ¡ÇÏÁö ¾Ê´Â °æ¿ì
-            cout << "Àß¸øµÈ ¿¬»êÀÚÀÔ´Ï´Ù." << endl;   // Àß¸øµÈ ¿¬»êÀÚ¿¡ ´ëÇÑ °æ°í ¸Þ½ÃÁö Ãâ·Â
-            break;   // switch¹® Á¾·á
+        default:                     // ìœ„ì˜ caseì™€ ì¼ì¹˜í•˜ì§€ ì•ŠëŠ” ê²½ìš°
+            cout << "ìž˜ëª»ëœ ì—°ì‚°ìžìž…ë‹ˆë‹¤." << endl;   // ìž˜ëª»ëœ ì—°ì‚°ìžì— ëŒ€í•œ ê²½ê³  ë©”ì‹œì§€ ì¶œë ¥
+            break;   // switchë¬¸ ì¢…ë£Œ
         }
     }
 
-    return 0;   // ÇÁ·Î±×·¥ Á¾·á
+    return 0;   // í”„ë¡œê·¸ëž¨ ì¢…ë£Œ
 }
